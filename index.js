@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// both internal and nestedFunction are inside of myFunction and the variable internal was created outside of nestedFunction, so nestedFunction can reach out and access internal
 
 
 
@@ -28,12 +28,14 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
   }
  
-
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
@@ -56,8 +58,10 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    const displayNames = [];
+    arr.forEach(animal => displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`));
+    return displayNames;
   }
   
 
@@ -67,8 +71,9 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(arr){
+    const lowerCaseAnimals = arr.map(animal => animal.animal_name.toLowerCase());
+    return lowerCaseAnimals;
   }
   
   
@@ -77,8 +82,10 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(arr){
+    const lowPop = arr.filter(animal => animal.population < 5)
+    console.log(lowPop);
+    return lowPop;
   }
   
 
@@ -88,8 +95,11 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(arr){
+    const totalPop = arr.reduce((acc, pop) => {
+      return acc + pop.population;
+    }, 0);
+    return totalPop;
   }
   
   

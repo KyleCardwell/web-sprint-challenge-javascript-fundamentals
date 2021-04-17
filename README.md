@@ -28,15 +28,18 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
-
+        .forEach - doesn't have a default return, modifies an existing array;  .map - returns a new array, does not require a variable to be initialized before using
 2. Explain the difference between a callback and a higher order function.
-
+        a higher order function accepts a callback function as a parameter
 3. What is closure?
-
+        a function and its lexical environment
 4. Describe the four rules of the 'this' keyword.
-
+        Global Object Binding - the gloal scope (usually the window/console)
+        Implicit Binding - the object the "this" is inside of (the object beore the dot)
+        New Binding - In a constructor funtion, "this" refers to the new instance of the object
+        Explicit Binding - when using .call or .apply, "this" refers to the object inside the ()
 5. Why do we need super() in an extended class?
-
+        it replaces the object.Create; it links the prototype of the parent to the child
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
